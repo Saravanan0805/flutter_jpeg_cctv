@@ -48,18 +48,14 @@ class _TestPathState extends State<TestPath> {
     setState(() {
       date = DateTime.now().toString();
     });
-    // final directory = await getExternalStorageDirectory();
-    // final path = join((directory)!.path, '$date.png');
-
     XFile image = await controller!.takePicture();
-    // final byteData = await image.readAsBytes();
+    /* final byteData = await image.readAsBytes();
     final directory =
         (await getExternalStorageDirectories(type: StorageDirectory.downloads))!
             .first;
-    String imagePath = image.path;
-    File file2 = File("${directory.path}/$date.png");
-    //await file2.writeAsBytes(byteData.buffer
-    // .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
+    File file = File("${directory.path}/$date.png");
+    await file2.writeAsBytes(byteData.buffer
+     .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes)); // stores image files as jpeg in the path provided by the directory*/
     setState(() {
       url = image.path;
       f = File(url);
@@ -80,7 +76,6 @@ class _TestPathState extends State<TestPath> {
   }
 
   startServer() async {
-    // cameraBytesToDetector(camera: controller!);
     setState(() {
       statusText = "Starting server on Port : 8080";
     });
@@ -96,7 +91,6 @@ class _TestPathState extends State<TestPath> {
   </head>
   <body>
     <p>mjprg mobile camera </p>
-  
   </body>
 </html>''';
     await for (var request in server) {
