@@ -24,7 +24,7 @@ class _TestPathState extends State<TestPath> {
   dynamic content;
   String html = '';
   String url = '';
-  File f = File('');
+  File f = File('new');
 
   @override
   void initState() {
