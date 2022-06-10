@@ -1,6 +1,6 @@
 # cctv
 
-A simple flutter mobile server app that capture image using mobile camera in burst mode and shows the captured image orderwise in a simple local http server website.
+A simple flutter mobile server app that captures image using mobile camera in burst mode and shows the captured image orderwise in a local http server website.
 
 ## Getting Started
 
