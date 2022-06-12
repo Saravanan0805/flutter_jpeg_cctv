@@ -25,7 +25,7 @@ class _TestPathState extends State<TestPath> {
   String html = '';
   String url = '';
   File f = File('');
-
+  bool takepictures = true;
   @override
   void initState() {
     super.initState();
@@ -41,7 +41,8 @@ class _TestPathState extends State<TestPath> {
   }
 
   void timerPeriodic() {
-    Timer.periodic(const Duration(milliseconds: 200), (Timer t) => takePic());
+    Timer.periodic(const Duration(milliseconds: 200),
+        (Timer t) => takepictures ? takePic() : null);
   }
 
   void takePic() async {
@@ -121,6 +122,17 @@ class _TestPathState extends State<TestPath> {
               startServer();
             },
             child: Text(statusText),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                controller!.dispose();
+                url = '';
+                takepictures = false;
+                exit(0);
+              });
+            },
+            child: const Text('Stop server'),
           ),
           Container(
             child: url != '' ? Image.file(File(url)) : const Text('image '),
