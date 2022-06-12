@@ -1,6 +1,6 @@
 # cctv
 
-A new Flutter project.
+A simple flutter mobile server app that captures image using mobile camera in burst mode and shows the captured image orderwise in a local http server website.
 
 ## Getting Started
 
