@@ -91,7 +91,7 @@ class _TestPathState extends State<TestPath> {
      <meta http-equiv="refresh" content="0.5">
   </head>
   <body>
-    <p>mjprg mobile camera </p>
+    <p>mjpeg mobile camera </p>
   </body>
 </html>''';
     await for (var request in server) {
